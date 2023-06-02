@@ -3,8 +3,8 @@ title: "Homer Theme"
 subtitle: "Walkx"
 logo: "logo.png"
 
-header: false
-footer: '<p>Theme made with <span class="has-text-danger">❤️</span> by <a href="https://github.com/WalkxCode">Walkx</a></p>' # Set false if you want to hide it.
+header: true
+footer: false
 
 stylesheet:
   - "assets/custom.css"
@@ -41,9 +41,25 @@ colors:
     link-hover: "#fafafa"
     background-image: "../assets/wallpaper.jpeg"
 
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "Link 1"
+    icon: "fab fa-github"
+    url: "https://github.com/bastienwirtz/homer"
+    target: "_blank" # optional html tag target attribute
+  - name: "link 2"
+    icon: "fas fa-book"
+    url: "https://github.com/bastienwirtz/homer"
+  # this will link to a second homer page that will load config from page2.yml and keep default config values as in config.yml file
+  # see url field and assets/page.yml used in this example:
+  - name: "Second Page"
+    icon: "fas fa-file-alt"
+    url: "#page2"
+
 services:
   - name: "//GitHub"
-    icon: "fas fa-github"
+    icon: "fa-brands fa-github"
     items:
       - name: "Homer Theme"
         logo: "assets/tools/walkx.png" # Change github.png to the name of your own custom icon!
@@ -52,9 +68,24 @@ services:
         tagstyle: "is-primary" # This will display the is-primary color! Try changing it to; is-link, is-info, is-success, is-warning or is-danger!
         url: "https://github.com/WalkxCode/Homer-Theme"
         target: "_blank"
-
+      - name: "Awesome app"
+        logo: "assets/tools/sample.png"
+        # Alternatively a fa icon can be provided:
+        # icon: "fab fa-jenkins"
+        subtitle: "Bookmark example"
+        tag: "app"
+        keywords: "self hosted reddit" # optional keyword used for searching purpose
+        url: "https://www.reddit.com/r/selfhosted/"
+        target: "_blank" # optional html tag target attribute
+      - name: "Another one"
+        logo: "assets/tools/sample2.png"
+        subtitle: "Another application"
+        tag: "app"
+        # Optional tagstyle
+        tagstyle: "is-success"
+        url: "#"
   - name: "//Reddit"
-    icon: "fas fa-reddit"
+    icon: "fa-brands fa-reddit-alien"
     items:
       - name: "The original reddit post!"
         logo: "assets/tools/reddit.png"
@@ -63,3 +94,12 @@ services:
         tagstyle: "is-info"
         url: "https://www.reddit.com/r/selfhosted/comments/q9e82c/yes_this_is_homer_yes_i_spent_2_hours_customizing/"
         target: "_blank"
+      - name: "Pi-hole"
+        logo: "assets/tools/sample.png"
+        # subtitle: "Network-wide Ad Blocking" # optional, if no subtitle is defined, PiHole statistics will be shown
+        tag: "other"
+        url: "http://192.168.0.151/admin"
+        type: "PiHole" # optional, loads a specific component that provides extra features. MUST MATCH a file name (without file extension) available in `src/components/services`
+        target: "_blank" # optional html a tag target attribute
+        # class: "green" # optional custom CSS class for card, useful with custom stylesheet
+        # background: red # optional color for card to set color directly without custom stylesheet
